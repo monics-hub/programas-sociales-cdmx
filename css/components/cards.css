@@ -1,0 +1,71 @@
+/* Stats Cards */
+.cards-container{
+    display:flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    
+}
+
+.stat-card-top{
+    background-color: var(--red-950);
+    opacity: 98%;
+    padding: 20px;
+    width: 100%;
+}
+
+.stat-card-bottom{
+    background-color: white;
+    padding: 20px;
+    width: 100%;
+}
+
+.stat-card-top img{
+    height: 80px;
+    width: 80px;
+}
+
+.stat-value {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 1em;
+    color: black;
+    opacity: 80%;
+    font-weight: 500;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .cards-container{
+        flex-direction: row;
+    }
+
+    .stat-card{
+        width: 45vw;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container{
+        gap: 10px;
+    }
+
+    .stat-value {
+        font-size: 1.5em;
+    }
+}

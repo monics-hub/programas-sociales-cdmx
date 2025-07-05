@@ -1,0 +1,57 @@
+.chart-container {
+    background: white;
+    border: 2px dashed white;
+    border-radius: 12px;
+    height: 756px;
+}
+
+.chart-filters {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.filter-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.filter-checkbox:hover {
+    background-color: #f8f9fa;
+}
+
+.filter-checkbox input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--red-900);
+}
+
+.filter-checkbox label {
+    font-size: 1em;
+    color: black;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+
+@media (max-width: 768px) {
+    .chart-filters {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .chart-filters {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+

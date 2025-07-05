@@ -1,0 +1,11 @@
+:root {
+  --red-900: #7f1d1d;
+  --red-950: #450a0a;
+  --red-opacity: 98%;
+
+  --body-max-anchor: 920px;
+  --sidebar-max-anchor: 400px;
+
+  --tablet-breakpoint: 1200px;
+  --mobile-breakpoint: 768px;
+}

@@ -1,0 +1,11 @@
+.download-button{
+    background-color: var(--red-950);
+    opacity: 98%;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 700;
+    color:white;
+    border-radius: 16px;
+    padding: 20px;
+    border: none;
+}

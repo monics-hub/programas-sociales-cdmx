@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas Sociales CDMX</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="public/cdmx-red.svg" type="Image">
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <!-- Header -->
+        <img src="public/cdmx-white.svg" alt="cdmx-logo">
+        <h1>Programas Sociales CDMX</h1>
+    </div>
+    <div class="rotate-warning">
+        📱 Para una mejor experiencia por favor gire el dispositivo.
+    </div>
+    
+    <div class="content-and-sidebar">
+        <div class="sidebar-container">
+            <!-- Filters Section -->
+            <div class="filters-section">
+                <div class="filter-group">
+                    <div class="filter-title">Selecciona una entidad</div>
+                    <select class="filter-select" id="entidad-select">
+                        <option value="Venustiano Carranza">Venustiano Carranza</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <div class="filter-title">Selecciona un año</div>
+                    <select class="filter-select" id="agno-select">
+                        <option value="2021">2021</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <div class="filter-title">Selecciona una sección</div>
+                    <select class="filter-select" id="seccion-select">
+                        <option value="Salud">Salud</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <div class="filter-title">Selecciona un programa</div>
+                    <select class="filter-select" id="titulo-select">
+                        <option value="Servicios médicos y medicamentos VC">Servicios médicos y medicamentos VC</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Statistics Cards -->
+            <div class="cards-container"> 
+                <div class="stat-card">
+                    <div class="stat-card-top">
+                    <img src="public/money-bag-white.svg" alt="dinero">
+                    </div>
+                    <div class="stat-card-bottom">
+                        <div class="stat-value" id="budget-value">100</div>
+                        <div class="stat-label">Presupuesto</div>
+                    </div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card-top">
+                        <img src="public/heart-white.svg" alt="corazon">
+                    </div>
+                    <div class="stat-card-bottom">
+                        <div class="stat-value" id="impact-value">100</div>
+                        <div class="stat-label">Beneficiarios</div>
+                    </div>
+                </div>
+            </div>
+            <button class="download-button" id="download-button">Descargar PDF</button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Program Information -->
+            <div class="program-info" id="program-info">
+                <div class="program-date" id="program-date">Fecha</div>
+                <h2 class="program-title" id="program-title">Nombre del Programa Social</h2>
+                <div class="program-subtitle" id="program-subtitle">Algún subtítulo.</div>
+                <div class="program-description" id="program-description">
+                    Selecciona los filtros arriba para cargar automáticamente la información del programa social. Los datos se actualizarán dinámicamente mostrando el título, descripción, presupuesto, alcance e imágenes correspondientes del programa seleccionado.
+                </div>
+            </div>
+
+            <div class="chart-filters">
+                <div class="filter-checkbox">
+                    <input type="checkbox" id="maintain-entity">
+                    <label for="maintain-town" id="checkbox-label-entity">Sólo Venustiano Carranza</label>
+                </div>
+
+                <div class="filter-checkbox">
+                    <input type="checkbox" id="maintain-year" checked>
+                    <label for="maintain-year" id="checkbox-label-year">Sólo 2021</label>
+                </div>
+
+                <div class="filter-checkbox">
+                    <input type="checkbox" id="maintain-section" checked>
+                    <label for="maintain-seccion" id="checkbox-label-section">Sólo Salud</label>
+                </div>
+            </div>
+
+            <div class="chart-container" id="chart-container">
+                
+                <tableau-viz id="chart" src="https://public.tableau.com/views/ProgramassocialesCDMX2019-2021/Dashboard"
+                    toolbar="hidden"
+                    hide-tabs>
+                <viz-filter field="Entidad" value="Venustiano Carranza"></viz-filter>
+                </tableau-viz>
+            </div> 
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

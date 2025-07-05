@@ -1,0 +1,3 @@
+Implement animations
+Make it responsive
+Accesibility features.
