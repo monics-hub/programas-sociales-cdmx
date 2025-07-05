@@ -16,7 +16,7 @@ async function main() {
     );
 
     try {
-        const data = await loadCSV("public/programas-sociales.csv");
+        const data = await loadCSV("programas-sociales.csv");
         setMenuOptions(data, "entidad", getElementByName("menuEntidad"));
         setupEventHandlers(data);
 
